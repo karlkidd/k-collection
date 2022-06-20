@@ -1,37 +1,88 @@
-# k-collection
+#### Install
 
-#### 介绍
-k-collection
+```js
+ npm install --save k-collection
+```
 
-#### 软件架构
-软件架构说明
+#### Example
 
+```js
+// if you use require
+const kCollection = require('k-collection');
+console.log(kCollection,'=====kCollection')
+```
 
-#### 安装教程
+or
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```js
+// if you use import, you can import
+import { kCollection } from  'k-collection';
+// or
+import kCollection from  'k-collection';
+console.log(kCollection,'=====kCollection')
+```
 
-#### 使用说明
+#### Api
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```js
+{
+  author: "karlkidd",
+  install: ƒ (Vue),
+  kCloneDeep: v => {…},
+  kCompressImage: (file, callBack, convertToBase64 = false) => {…},
+  kCookies: {install: ƒ, setCookie: ƒ, setCookieConfig: ƒ, getCookie: ƒ, delCookie: ƒ},
+  kCopyText: ƒ copyText(value),
+  kDateFormat: ƒ kDateFormat(fmt, date),
+  kDebounce: ƒ kDebounce(fn, wait=1000),
+  kExportExcel: ƒ kExportExcel(interfaceParameters),
+  kRegExp: {intReg: /^\d{1,}$/, floatReg: /^\d+\.\d+$/, numReg: /^[0-9.]+$/, IMEI: /^\d{15,17}$/, …},
+  kThrottle: ƒ kThrottle(fn, delay=1000),
+  kUserAgent: {uaInfo: 'other', wx: false, ios: false, android: false, wxIos: false, …},
+  name: "k-collection",
+  version: "0.0.02",
+}
 
-#### 参与贡献
+// If you want use in vue 
+vue.use(kCollection)
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+```
 
+###### kCompressImage
 
-#### 特技
+```js
+kCompressImage(file,callbackFun,false);
+callbackFun(res){
+  console.log(res)
+}
+```
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+###### kCookies
+
+```js
+{
+  delCookie: ƒ delCookie(name),
+  getCookie: ƒ getCookie(name),
+  install: ƒ (Vue),
+  setCookie: ƒ setCookie(key,value,expires,domains,path),
+  setCookieObj: ƒ setCookieConfig(obj) // obj is {key,value,expires,domains,path},
+}
+// if you want set cookie 
+kCookies.setCookie(key,value,expires,domains,path)
+// or
+kCookies.setCookie({key,value,expires,domains,path})
+//or
+kCookies.setCookieObj({key,value,expires,domains,path})
+
+// get cookie or delect cookie 
+kCookies.getCookieObj(name)
+kCookies.delCookieObj(name)
+```
+
+###### kCopyText
+
+```js
+kCopyText(string).then(()=>{
+  alert('copy success')
+})
+```
+

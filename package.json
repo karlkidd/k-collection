@@ -1,0 +1,74 @@
+{
+  "name": "k-collection",
+  "version": "0.0.02",
+  "main": "lib/k-collection.min.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lib": "vue-cli-service build --target lib --name k-collection --dest lib packages/index.js",
+    "start": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karlkidd/k-collection.git",
+    "giteeUrl": "https://gitee.com/karlkidd8080/k-collection.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "cookies",
+    "compress",
+    "compressImage",
+    "copyText",
+    "debounce",
+    "throttle",
+    "regExp",
+    "k-collection"
+  ],
+  "author": "Karlkidd",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-import": "^1.13.3",
+    "core-js": "^3.6.5",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "lib-flexible": "^0.3.2",
+    "postcss-pxtorem": "^5.1.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=9.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,7 +1,7 @@
-# k-collection
+# my-npm-package
 
 #### Description
-k-collection
+my-npm-package
 
 #### Software Architecture
 Software architecture description
