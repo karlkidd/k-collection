@@ -72,7 +72,28 @@ const handle_cookie = ({
     exp.setTime(exp.getTime() - 1);
     var cval = this.getCookie(name);
     if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
-  }
+  },
+  isKey(key) {
+    let res = this.keys().includes(key);
+    return res;
+  },
+  cookiesObj() {
+    let _objs = []
+    let _string = document.cookie
+    if (_string){
+      let oArr = _string.split('; ')
+      for(let i in oArr){
+        let item = oArr[i].split('=');
+        _objs[item[0]] = item[1]
+      }
+    }
+    return _objs;
+  },
+  getKeys() {
+    let objs = this.cookiesObj();
+    let _keys = Object.keys(objs)
+    return _keys;
+  },
 });
 
 

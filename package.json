@@ -22,20 +22,19 @@
     "cookies",
     "compress",
     "compressImage",
+    "copy",
     "copyText",
     "debounce",
     "throttle",
     "regExp",
     "k-collection"
   ],
-  "author": "Karlkidd",
+  "author": "karlkidd",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.3",
     "core-js": "^3.6.5",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -46,7 +45,6 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "lib-flexible": "^0.3.2",
-    "postcss-pxtorem": "^5.1.1",
     "vue-template-compiler": "^2.6.11"
   },
   "engines": {

@@ -9,7 +9,7 @@ import kDateFormat from "./common-js/dateFormat";
 import authjs from './common-js/auth';
 
 const packageInfo = require('../package.json');
-console.log(packageInfo,'===pa')
+// console.log(packageInfo,'===pa')
 
 const getVersion = ()=>packageInfo.version;
 const getName = ()=> packageInfo.name;
