@@ -46,9 +46,17 @@ const handle_cookie = ({
     }else if(typeof key == 'undefined'){
       throw Error('You will use setCookie function, key must be Object or String, but you set key is undefined, Please check you code');
     }else if(typeof key == 'object'){
-      doCookie(key.key, key.value, key.expires, key.domains, key.path,)
+      if(typeof key.key == 'string' && typeof key.value == 'string'){
+        doCookie(key.key, key.value, key.expires, key.domains, key.path,)
+      }else{
+        throw Error('You will use setCookie function, key and value must be String, Please check you code');
+      }
     }else{
-      doCookie(key, value, expires, domains, path,)
+      if(typeof key == 'string' && typeof value == 'string'){
+        doCookie(key, value, expires, domains, path,)
+      }else{
+        throw Error('You will use setCookie function, key and value must be String, Please check you code');
+      }
     }
   },
   setCookieObj(obj) {
@@ -59,7 +67,11 @@ const handle_cookie = ({
     }else if(typeof obj == 'string'){
       throw Error('You will use setCookie function, key must be Object, but you set key is string, Please check you code');
     }else{
-      doCookie(obj.key, obj.value, obj.expires, obj.domains, obj.path,)
+      if(typeof obj.key == 'string' && typeof obj.value == 'string'){
+        doCookie(obj.key, obj.value, obj.expires, obj.domains, obj.path,)
+      }else{
+        throw Error('You will use setCookie function, key and value must be String, Please check you code');
+      }
     }
   },
   getCookie(name) {

@@ -30,7 +30,7 @@ console.log(kCollection,'=====kCollection')
   install: ƒ (Vue),
   kCloneDeep: v => {…},
   kCompressImage: (file, callBack, convertToBase64 = false) => {…},
-  kCookies: {install: ƒ, setCookie: ƒ, setCookieConfig: ƒ, getCookie: ƒ, delCookie: ƒ},
+  kCookies: {install: ƒ, setCookie: ƒ, setCookieConfig: ƒ, getCookie: ƒ, delCookie: ƒ, isKey: ƒ, getKeys: ƒ, cookiesObj: ƒ},
   kCopyText: ƒ copyText(value),
   kDateFormat: ƒ kDateFormat(fmt, date),
   kDebounce: ƒ kDebounce(fn, wait=1000),
@@ -39,7 +39,7 @@ console.log(kCollection,'=====kCollection')
   kThrottle: ƒ kThrottle(fn, delay=1000),
   kUserAgent: {uaInfo: 'other', wx: false, ios: false, android: false, wxIos: false, …},
   name: "k-collection",
-  version: "0.0.02",
+  version: "0.0.01",
 }
 
 // If you want use in vue 
@@ -60,13 +60,23 @@ callbackFun(res){
 
 ```js
 {
-  delCookie: ƒ delCookie(name),
-  getCookie: ƒ getCookie(name),
-  install: ƒ (Vue),
-  setCookie: ƒ setCookie(key,value,expires,domains,path),
-  setCookieObj: ƒ setCookieConfig(obj) // obj is {key,value,expires,domains,path},
+  cookiesObj: ƒ cookiesObj()
+  delCookie: ƒ delCookie(name)
+  getCookie: ƒ getCookie(name)
+  getKeys: ƒ getKeys()
+  install: ƒ (Vue)
+  isKey: ƒ isKey(key)
+  setCookie: ƒ setCookie(key,value,expires,domains,path)
+  setCookieObj: ƒ setCookieObj(obj)
 }
-// if you want set cookie 
+/** 
+* @param {String} key
+* @param {String} value  
+* @param {Number,String} expires (hours)
+* @param {*} domains
+* @param {*} path 
+* if you want set cookie 
+*/
 kCookies.setCookie(key,value,expires,domains,path)
 // or
 kCookies.setCookie({key,value,expires,domains,path})
