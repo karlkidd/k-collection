@@ -1,6 +1,6 @@
 {
   "name": "k-collection",
-  "version": "0.0.03",
+  "version": "0.0.04",
   "main": "lib/k-collection.min.js",
   "files": [
     "lib"
