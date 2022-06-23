@@ -5,8 +5,21 @@
 </template>
 
 <script>
+// import * as Collection from '../lib/k-collection.common';
+
+// console.log(Collection,'===Collection')
 import kCollection from '../packages/index';
 console.log(kCollection,'===kCollection')
+// import * as Collection from '../packages/index';
+// import kCollection from '../packages/index';
+// console.log(Collection,'===Collection')
+// console.log(kCollection,'===kCollection')
+
+
+// const obj = require('../lib/k-collection.common')
+// const { kCollection,kRegExp } = require('../lib/k-collection.common')
+// console.log(obj,'=====obj')
+// console.log(kCollection,kRegExp,'===kCollection')
 export default {
   name: 'App',
 }

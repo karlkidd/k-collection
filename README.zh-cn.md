@@ -1,24 +1,20 @@
-#### Install
+#### 安装
 
 ```js
  npm install --save k-collection
 ```
 
-#### Example
+#### 示例
 
 ```js
-// if you use require
-const  { kRegExp, kCompressImage, kUserAgent, kCookies, kCopyText, kExportExcel, kDateFormat, kCloneDeep, kDebounce, kThrottle, version, name, author, license } = require('k-collection');
-// or
+// 使用require方式
 const kCollection = require('k-collection');
+const  { kRegExp, kCompressImage, kUserAgent, kCookies, kCopyText, kExportExcel, kDateFormat, kCloneDeep, kDebounce, kThrottle, version, name, author, license } = require('k-collection');
 ```
 
-or
-
 ```js
-// if you use import, you can import
+// 使用import方式
 import { kRegExp, kCompressImage, kUserAgent, kCookies, kCopyText, kExportExcel, kDateFormat, kCloneDeep, kDebounce, kThrottle, version, name, author, license } from  'k-collection';
-// or
 import kCollection from  'k-collection';
 ```
 
@@ -42,18 +38,18 @@ import kCollection from  'k-collection';
   version: "0.0.01",
 }
 
-// If you want use in vue 
+// 可以直接使用vue.use全局安装 
 vue.use(kCollection)
 
 ```
 
-###### compress image
+###### 图片压缩
 
 ```js
-/** files is image, callback is function, convertToBase64 is default false
-*		It is found that on the apple 12 and apple 13 models, the first picture is compressed into a blank picture;
-*		If the first image is detected during uploading, the method should be executed in advance
-*		kCompressImage(file.file,function(){},true)
+/** 图片文件，回调方法，是否转换为base64(true为base64，默认false)
+*   发现在苹果12，苹果13机型上，会出现首张图片压缩后为空白图片的情况；
+*		如果在上传的时候，检测到是首张图片，需要对该方法提前执行一遍
+* 	kCompressImage(file.file,function(){},true)
 */
 if(fileList.length == 1){
   kCompressImage(file.file,function(){},true)
@@ -66,11 +62,11 @@ callbackFun(res){
 }
 ```
 
-###### cookies
+###### 操作cookie
 
 ```js
 {
-  cookiesObj: ƒ cookiesObj() // get all cookies，is a Object
+  cookiesObj: ƒ cookiesObj() // 获取所有cookie，是个对象
   delCookie: ƒ delCookie(name)
   getCookie: ƒ getCookie(name)
   getKeys: ƒ getKeys()
@@ -80,34 +76,34 @@ callbackFun(res){
   setCookieObj: ƒ setCookieObj(obj)
 }
 /** 
-* @param {String} key
+* @param {String} key 
 * @param {String} value  
-* @param {Number,String} expires (hours,default 7 * 24 hours)
+* @param {Number,String} expires (小时，默认7天)
 * @param {*} domains
 * @param {*} path 
-* if you want set cookie 
 */
+// 设置cookie
 kCookies.setCookie(key,value,expires,domains,path)
-// or
+// 或
 kCookies.setCookie({key,value,expires,domains,path})
-//or
+//或
 kCookies.setCookieObj({key,value,expires,domains,path})
 
-// get cookie or delect cookie 
+// 获取cookie、删除cookie
 kCookies.getCookieObj(name)
 kCookies.delCookieObj(name)
 ```
 
-###### copy text
+###### 文本拷贝
 
 ```js
-// Only string can be passed
+// 只能传字符串
 kCopyText(string).then(()=>{
   alert('copy success')
 })
 ```
 
-###### debounce / throttle
+###### 防抖、节流
 
 ```js
 // <button onClick='myDebounce()'>myDebounce</button>

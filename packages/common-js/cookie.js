@@ -5,7 +5,7 @@ import regFun from "./regExp";
  * @param {*} time hours
  */
 const expiresFun = (time)=>{
-  let times = '; max-age=' + (60 * 60 * 30 * 24);
+  let times = '; max-age=' + (60 * 60 * 24 * 7 );
   if(regFun.numReg.test(time)){
     times = '; max-age=' + (60 * 60 * Number(time))
   }
