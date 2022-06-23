@@ -29,7 +29,7 @@ import kCollection from  'k-collection';
   author: "karlkidd",
   install: ƒ (Vue),
   kCloneDeep: v => {…},
-  kCompressImage: (file, callBack, convertToBase64 = false) => {…},
+  kCompressImage: (file, callBack, convertToBase64 = false,ratio = 0.4) => {…},
   kCookies: {install: ƒ, setCookie: ƒ, setCookieConfig: ƒ, getCookie: ƒ, delCookie: ƒ, isKey: ƒ, getKeys: ƒ, cookiesObj: ƒ},
   kCopyText: ƒ copyText(value),
   kDateFormat: ƒ kDateFormat(fmt, date),
@@ -50,16 +50,16 @@ vue.use(kCollection)
 ###### compress image
 
 ```js
-/** files is image, callback is function, convertToBase64 is default false
+/** files is image; callback is function; convertToBase64 is default false; tatio use canvas.toDataURL('image/jpeg', ratio), must be 0-1;
 *		It is found that on the apple 12 and apple 13 models, the first picture is compressed into a blank picture;
 *		If the first image is detected during uploading, the method should be executed in advance
 *		kCompressImage(file.file,function(){},true)
 */
 if(fileList.length == 1){
-  kCompressImage(file.file,function(){},true)
+  kCompressImage(file.file,function(){},true,0.4)
 }
 
-kCompressImage(file,callbackFun,convertToBase64);
+kCompressImage(file,callbackFun,convertToBase64,tatio);
 
 callbackFun(res){
   console.log(res)
@@ -114,6 +114,7 @@ kCopyText(string).then(()=>{
 function toDo(){
   api.post()
 };
+// the function must be have this
 const myDebounce = kDebounce(function(){
   toDo()
 },100)

@@ -1,3 +1,5 @@
+import regFun from "./regExp";
+
 /**
  * 
  * @param {*} file image file
@@ -5,7 +7,13 @@
  * @param {*} convertToBase64 file to base64
  */
 
-const compressImage = (file, callBack, convertToBase64 = false) => {
+const compressImage = (file, callBack, convertToBase64 = false,ratio = 0.4) => {
+    if(!regFun.numReg.test(ratio)){
+        ratio = 0.4
+    }
+    if(file.type.indexOf('image') == -1){
+        return callBack(file)
+    }
     let reader = new FileReader();
     reader.readAsDataURL(file); // 读出 base64
     reader.onloadend = ev => {
@@ -37,7 +45,7 @@ const compressImage = (file, callBack, convertToBase64 = false) => {
             ctx.fillRect(0, 0, width, height);
             ctx.drawImage(img, 0, 0, width, height);
             if (convertToBase64) {
-                const base64 = canvas.toDataURL('image/jpeg', 0.4)  // 图片的质量默认是0.4，取值是 0 到 1，如果超出取值范围，将会使用默认值 0.92
+                const base64 = canvas.toDataURL('image/jpeg', ratio)  // 图片的质量默认是0.4，取值是 0 到 1，如果超出取值范围，将会使用默认值 0.92
                 console.log(base64)
                 callBack(base64)
                 return
@@ -45,7 +53,7 @@ const compressImage = (file, callBack, convertToBase64 = false) => {
             canvas.toBlob(function (blob) {
                 console.log(blob)
                 callBack(blob)
-            }, 'image/jpeg', 0.4)
+            }, 'image/jpeg', ratio)
         };
     };
 };
