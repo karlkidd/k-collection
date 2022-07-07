@@ -18,7 +18,7 @@ const expiresFun = (time)=>{
  * @param {*} domains host
  */
 const domainFun = (domains)=>{
-  let domainVal = domains || location.host;
+  let domainVal = domains || location.hostname;
   domainVal = '; domain=' + domainVal;
   return domainVal;
 }

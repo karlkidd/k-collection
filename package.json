@@ -1,6 +1,6 @@
 {
   "name": "k-collection",
-  "version": "0.0.05",
+  "version": "0.0.6",
   "main": "lib/k-collection.umd.min.js",
   "files": [
     "lib"
